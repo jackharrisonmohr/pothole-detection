@@ -1,0 +1,11 @@
+The demo notebook reads in a text file of tuples representing the detected potholes in the dataset of Chicago street images retrieved from the Google Images API.
+It assumes you have the images as well.
+
+The pothole_classifier notebook will train a classifier given the dataset: https://www.kaggle.com/datasets/atulyakumar98/pothole-detection-dataset
+It will then download some sample images from Google Maps API (requires an API key) and predict which ones contain potholes.
+It will then output a list of tuples representing the locations of the detected potholes and the image file name.
+You can copy this output into a text file and use it as input to demo_chicago_pothole_detector.ipynb, which check compare the detected potholes and their locations to a csv of potholes filled by the City of Chicago (https://data.cityofchicago.org/Transportation/Potholes-Patched/wqdh-9gek) and display on a map with red markers representing the location of predicted potholes that have not been filled by the city.
+
+If you want to skip the model training, you can run inference with the 'pothole_classifier.h5' model, which is the output from training the model.
+
+This demonstrates a prototype of a system for automatically detecting and viewing unfilled potholes in Chicago, given images of the street. If a network of mini-nodes were to be deployed as an augmentation of the Argonne SAGE network, this system could be deployed on the SAGE network, while preserving privacy by blurring faces and license plates by processing the images on the network edge before uploading them to the cloud where they can be accessible to the public.
